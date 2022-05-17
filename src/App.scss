@@ -93,6 +93,21 @@ body {
 				
 				
 			}
+			.profile__dialogs {
+				padding-left: 210px;
+				height: auto;
+				color: white;
+				p {
+					margin: 0;
+				}
+				
+			}
+
+			.error__page {
+				font-size: 20px;
+				padding-left: 210px;
+				text-align: center;
+			}
 		}
 	}
 }
