@@ -1,7 +1,7 @@
 import './App.scss';
 import Header from './Components/Header/Header';
 import Profile from './Components/Profile/Profile';
-import Dialogs from './Components/Dialogs/Dialogs';
+import Messages from './Components/Messages/Messages';
 import Error from './Components/Error/Error';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -15,8 +15,8 @@ const App = () => {
 							<Header />
 							<Routes>
 								<Route path='/' element={<Profile />} />
-								<Route path='/dialogs' element={<Dialogs />} />
-								<Route path='*' element={<Error />} />
+								<Route path='/dialogs' element={<Messages />} />
+								<Route path='#' element={<Error />} />
 							</Routes>
 						</div>
 					</div>

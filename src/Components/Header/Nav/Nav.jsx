@@ -1,18 +1,19 @@
 import './../../../App.scss';
+import { Link } from "react-router-dom"
 
 const Nav = () => {
     return (
         <nav className='nav'>
             <div className='nav__menu'>
-                <a href='/' className='nav__link'>Home</a>
-                <a href='#' className='nav__link'>News</a>
-                <a href='/dialogs' className='nav__link'>Messages</a>
-                <a href='#' className='nav__link'>Groups</a>
-                <a href='#' className='nav__link'>Settings</a>
+                <Link to="/" className='nav__link'>Home</Link>
+                <Link to='#' className='nav__link'>News</Link>
+                <Link to='/dialogs' className='nav__link'>Messages</Link>
+                <Link to='#' className='nav__link'>Groups</Link>
+                <Link to='#' className='nav__link'>Settings</Link>
             </div>
             <div className='nav__enter'>
-                <a href='#' className='nav__link'>Sign In</a>
-                <a href='#' className='nav__link'>Sign Up</a>
+                <Link to='#' className='nav__link'>Sign In</Link>
+                <Link to='#' className='nav__link'>Sign Up</Link>
             </div>
         </nav>
     );

@@ -38,11 +38,19 @@ body {
 						display: flex;
 						flex-direction: column;
 						.nav__link {
+							height: 60px;
 							font-size: 20px;
 							color: white;
 							padding: 10px 15px;
 							text-align: center;
 							text-decoration: none;
+							transition: 0.3s linear;
+							outline: none;
+							&:hover {
+								background: white;
+								background-color: rgb(206, 193, 193);
+								
+							}
 						}
 					}
 
@@ -60,28 +68,32 @@ body {
 				}
 			}
 			.profile__info {
-				padding-left: 210px;
+				padding-left: 200px;
 				height: auto;
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: space-between;
 				color: white;
+				
 				img {
 					padding-top: 10px;
 					width: 130px;
 					height: 150px;
 					object-fit: cover;
-					margin-left: 10px;
+					margin-left: 20px;
 				}
 
 				.profile__text {
 					font-size: 20px;
-					margin: 0 10px;
+					margin: 0 20px;
 					height: 150px;
 				}
 
 				.profile__input {
+					width: 100%;
+					border-top: 2px solid white;
 					margin-top: 20px;
+					padding: 20px 20px;
 					.profile__posts {
 						color: white;
 					}
@@ -93,7 +105,7 @@ body {
 				
 				
 			}
-			.profile__dialogs {
+			.profile__messages {
 				padding-left: 210px;
 				height: auto;
 				color: white;

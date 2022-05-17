@@ -2,13 +2,13 @@ import './../../App.scss';
 
 
 
-const Dialogs = () => {
+const Messages = () => {
     return (
-        <div className='profile__dialogs'>
+        <div className='profile__messages'>
             <p>Dialogs</p>
         </div>
     );
 }
 
 
-export default Dialogs;
+export default Messages;
