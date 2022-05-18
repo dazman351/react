@@ -1,12 +1,16 @@
 import './../../../App.scss';
+import { Link } from 'react-router-dom';
 
 
 const Dialogs = (props) => {
+    let path = "/dialogs/" + props.id
     return (
         <div className='dialog'>
-            <p className='user'>{props.name} {props.surname}</p>
-            <p>{props.message}</p>
-        </div>
+            <Link to={path} className="link">
+                <p className='user'>{props.name} {props.surname}</p>
+                <p className='message'>{props.message}</p>
+            </Link>
+        </div> 
     );
 }
 

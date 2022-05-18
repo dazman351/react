@@ -15,7 +15,7 @@ const App = () => {
 							<Header />
 							<Routes>
 								<Route path='/' element={<Profile />} />
-								<Route path='/dialogs' element={<Messages />} />
+								<Route exact path='/dialogs' element={<Messages />} />
 								<Route path='#' element={<Error />} />
 							</Routes>
 						</div>

@@ -137,14 +137,23 @@ body {
 						margin: 0 10px;
 						border-bottom: 2px solid rgb(129, 122, 122);
 						transition: background-color 0.3s linear;
+						text-decoration: none;
 						&:hover {
 							cursor: pointer;
 							background-color: rgb(206, 193, 193);
 						}
-						.user {
-							color:rgb(43, 35, 35);
-							font-size: 20px;
-							font-weight: 700;
+
+						.link {
+							text-decoration: none;
+							.user {
+								color:rgb(43, 35, 35);
+								font-size: 20px;
+								font-weight: 700;
+							}
+							
+							.message {
+								color: white;
+							}
 						}
 						
 					}
