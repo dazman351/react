@@ -1,15 +1,18 @@
 import './../../../App.scss';
 import Post from './Post/Post';
-import postData from './../postData';
 
 
-let postMap = postData.map(post => <Post text={post.text} likes={post.likes}/>)
+const Posts = (props) => {
 
+    let postMap = props.postData.map(post => <Post text={post.text} likes={post.likes}/>)
 
-const Posts = () => {
     return (
-        <div className='profile__posts'>
-            { postMap }
+        <div className='profile__input'>
+            Напишите ваше первое сообщение: <input type="text" />
+            <button type="button">Send</button>
+            <div className='profile__posts'>
+                { postMap }
+            </div>
         </div>
     );
 }
