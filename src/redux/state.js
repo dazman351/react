@@ -1,12 +1,16 @@
+import { reRender } from './reRender';
+
+
+
 let state = {
     profilePage: {
         postData: [
-            {text: "Wassup guys :)", likes: 2},
-            {text: "Hey buddy :)", likes: 4},
-            {text: "How are you?", likes: 10},
-            {text: "I'm normal, and you?", likes: 22},
-            {text: "Awesome :)", likes: 3}
-        ] 
+            {id: 1, text: "Wassup guys :)", likes: 2},
+            {id: 2, text: "Hey buddy :)", likes: 4},
+            {id: 3, text: "How are you?", likes: 10},
+            {id: 4, text: "I'm normal, and you?", likes: 22},
+            {id: 5, text: "Awesome :)", likes: 3}
+        ]
     },
 
     messagesPage: {
@@ -37,5 +41,19 @@ let state = {
         ]
     }
 }
+
+export let addPost = (postMessage) => {
+
+    let newPost = {
+        id: 6,
+        text: postMessage,
+        likes: 0
+    }
+    state.profilePage.postData.push(newPost);
+    reRender(state);
+}
+
+
+
 
 export default state;

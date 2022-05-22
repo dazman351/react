@@ -2,6 +2,7 @@ import './../../App.scss';
 import Posts from './Posts/Posts';
 
 
+
 const Profile = (props) => {
 
 
@@ -13,7 +14,7 @@ const Profile = (props) => {
                 <p>Дата рождения: 12.04.1999</p>
                 <p>Город: Винница</p>
             </div>
-            <Posts postData={props.postData} />
+            <Posts addPost={props.addPost} postData={props.postData} />
         </div>
     );
 }
