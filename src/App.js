@@ -17,9 +17,15 @@ const App = (props) => {
 						<div className='social__inner'>
 							<Header />
 							<Routes>
-								<Route path='/' element={<Profile addPost={props.addPost} postData={props.state.profilePage.postData} />} />
-								<Route exact path='/dialogs' element={<Messages dialogsData={props.state.messagesPage.dialogsData} />} />
-								<Route path="/friends" element={<Friends friendsData={props.state.friendsPage.friendsData} />} />
+								<Route path='/' element={<Profile
+													postData={props.state.profilePage.postData}
+													addPost={props.addPost} 
+													newPostData={props.state.profilePage.newPostData}
+													updatePost={props.updatePost} />} />
+								<Route exact path='/dialogs' element={<Messages 
+													dialogsData={props.state.messagesPage.dialogsData} />} />
+								<Route path="/friends" element={<Friends 
+													friendsData={props.state.friendsPage.friendsData} />} />
 								<Route path='#' element={<Error />} />
 							</Routes>
 						</div>

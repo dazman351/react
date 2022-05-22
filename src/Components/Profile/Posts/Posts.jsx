@@ -8,16 +8,24 @@ const Posts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
-        newPostElement.current.value = "";
+        props.addPost();
+    }
+
+    let onPostChange = () => {
+        let newtext = newPostElement.current.value;
+        props.updatePost(newtext);
+        
     }
 
     let postMap = props.postData.map(post => <Post text={post.text} likes={post.likes}/>)
 
     return (
         <div className='profile__input'>
-            Напишите ваше первое сообщение: <input type="text" ref={newPostElement} />
+            Напишите ваше первое сообщение: <input
+                                    placeholder='Введите текст'
+                                    onChange={onPostChange} 
+                                    ref={newPostElement} 
+                                    value={ props.newPostData } />
             <button onClick={ addPost }>Send</button>
             <div className='profile__posts'>
                 { postMap }

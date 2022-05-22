@@ -1,4 +1,6 @@
-import { reRender } from './reRender';
+let reRender = () => {
+   console.log("Success");
+}
 
 
 
@@ -10,7 +12,8 @@ let state = {
             {id: 3, text: "How are you?", likes: 10},
             {id: 4, text: "I'm normal, and you?", likes: 22},
             {id: 5, text: "Awesome :)", likes: 3}
-        ]
+        ],
+        newPostData: ''
     },
 
     messagesPage: {
@@ -42,16 +45,29 @@ let state = {
     }
 }
 
-export let addPost = (postMessage) => {
+export const addPost = () => {
 
     let newPost = {
         id: 6,
-        text: postMessage,
+        text: state.profilePage.newPostData,
         likes: 0
     }
     state.profilePage.postData.push(newPost);
+    state.profilePage.newPostData = "";
+    reRender(state)
+}
+
+
+
+export const updatePost = (updateText) => {
+    state.profilePage.newPostData = updateText;
     reRender(state);
 }
+
+export const subscribe = (observer) => {
+    reRender = observer;
+}
+
 
 
 
