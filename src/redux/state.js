@@ -1,3 +1,12 @@
+import profileReducer from './profileReducer';
+import friendsReducer from './friendsReducer';
+import messagesReducer from './messagesReducer';
+
+
+
+
+
+
 let store = {
     _state: {
         profilePage: {
@@ -67,31 +76,12 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === "ADD-POST") {
-            let newPost = {
-                id: 6,
-                text: this._state.profilePage.newPostData,
-                likes: 0
-            }
-            this._state.profilePage.postData.push(newPost);
-            this._state.profilePage.newPostData = "";
-            this._reRender(this._state)
-        } else if (action.type === "UPDATE-TEXT") {
-            this._state.profilePage.newPostData = action.updateText;
-            this._reRender(this._state);
-        } else if (action.type === "UPDATE-MESSAGE") {
-            this._state.messagesPage.newMessageText = action.updateMessage;
-            this._reRender(this._state)
-        } else if (action.type === "SEND-MESSAGE") {
-           let text = this._state.messagesPage.newMessageText;
-           let newMessage = {
-                id: 9, 
-                message: text
-           }
-           this._state.messagesPage.messagesData.push(newMessage);
-           this._state.messagesPage.newMessageText = "";
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+        this._state.friendsPage = friendsReducer(this._state.friendsPage, action);
+
            this._reRender(this._state);
-        }
     }
 
 }
