@@ -1,6 +1,5 @@
 import './../../../App.scss';
 import Post from './Post/Post';
-import React from 'react';
 import { updateTextActionCreator } from '../../../redux/state';
 import { addPostActionCreator } from './../../../redux/state';
 
@@ -9,14 +8,12 @@ import { addPostActionCreator } from './../../../redux/state';
 
 const Posts = (props) => {
 
-    let newPostElement = React.createRef();
-
     let addPost = () => {
         props.dispatch(addPostActionCreator());
     }
 
-    let onPostChange = () => {
-        let newtext = newPostElement.current.value;
+    let onPostChange = (e) => {
+        let newtext = e.target.value;
         let action = updateTextActionCreator(newtext);
         props.dispatch(action);
         
@@ -29,12 +26,11 @@ const Posts = (props) => {
             Напишите ваше первое сообщение: <input
                                     placeholder='Введите текст'
                                     onChange={onPostChange} 
-                                    ref={newPostElement} 
                                     value={ props.newPostData } />
             <button onClick={ addPost }>Send</button>
             <div className='profile__posts'>
                 { postMap }
-            </div>
+            </div><br />
         </div>
     );
 }

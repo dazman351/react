@@ -3,6 +3,7 @@ body {
 	padding: 0;
 	font-size: 16px;
 	width: 100%;
+	max-width: 1213px;
 	background-color: rgb(206, 193, 193);
 	color: white;
 }
@@ -156,9 +157,6 @@ body {
 								font-weight: 700;
 							}
 							
-							.message {
-								color: white;
-							}
 						}
 						
 					}
@@ -214,6 +212,56 @@ body {
 								border-radius: 50%;
 							}
 						}
+					}
+				}
+			}
+
+
+			.dialog__online {
+				color: white;
+				width: 100%;
+				padding-left: 200px;
+				height: 625px;
+				.dialog__inner {
+					width: 95%;
+					margin: 10px auto;
+					height: 600px;
+					margin-top: 0;
+					padding-top: 10px;
+					
+					.dialog__name {
+						font-size: 20px;
+						font-weight: 700;
+						color: black;
+						text-align: center;
+						background-color: rgb(206, 193, 193);
+						
+					}
+
+					.dialog__window {
+						height: 70%;
+						overflow: auto;
+						background-color: rgb(206, 193, 193);
+						margin: 0;
+						p {
+							margin-left: 10px;
+							margin-right: 35%;
+							color: black;
+							font-size: 17px;
+						}
+					}
+
+					.dialog__input {
+						width: 90%;
+						height: 7%;
+						margin-top: 20px;
+						
+					}
+
+					.dialog__button {
+						width: 58px;
+						height: 7%;
+						margin-top: 20px;
 					}
 				}
 			}
