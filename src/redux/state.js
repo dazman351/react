@@ -48,28 +48,43 @@ let store = {
     reRender () {
         console.log("Success");
     },
-
-    addPost() {
-        let newPost = {
-            id: 6,
-            text: this._state.profilePage.newPostData,
-            likes: 0
-        }
-        this._state.profilePage.postData.push(newPost);
-        this._state.profilePage.newPostData = "";
-        this._reRender(this._state)
-    },
-
-    updatePost (updateText) {
-        this._state.profilePage.newPostData = updateText;
-        this._reRender(this._state);
-    },
-
+   
     subscribe (observer) {
         this._reRender = observer;
+    },
+
+    dispatch(action) {
+        if (action.type === "ADD-POST") {
+            let newPost = {
+                id: 6,
+                text: this._state.profilePage.newPostData,
+                likes: 0
+            }
+            this._state.profilePage.postData.push(newPost);
+            this._state.profilePage.newPostData = "";
+            this._reRender(this._state)
+        } else if (action.type === "UPDATE-TEXT") {
+            this._state.profilePage.newPostData = action.updateText;
+            this._reRender(this._state);
+        }
     }
 
 }
+
+
+
+export const addPostActionCreator = () => {
+    return {
+        type: "ADD-POST"
+    }
+}
+
+export const updateTextActionCreator = (newtext) => {
+    return {
+        type: 'UPDATE-TEXT', updateText: newtext
+    }
+}
+
 
 
 
