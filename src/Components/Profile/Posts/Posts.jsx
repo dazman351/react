@@ -1,7 +1,6 @@
 import './../../../App.scss';
 import Post from './Post/Post';
-import { updateTextActionCreator } from '../../../redux/state';
-import { addPostActionCreator } from './../../../redux/state';
+import { addPostActionCreator, updateTextActionCreator } from './../../../redux/profileReducer';
 
 
 

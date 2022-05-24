@@ -1,6 +1,8 @@
-import { sendMessageActionMessage, updateTextActionMessage } from '../../../../redux/state';
+import { updateTextActionMessage, sendMessageActionMessage } from '../../../../redux/messagesReducer';
 import './../../../../App.scss';
 import MessageWindow from './MessageWindow/MessageWindow';
+
+
 
 
 

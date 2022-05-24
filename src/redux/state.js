@@ -1,12 +1,3 @@
-import profileReducer from './profileReducer';
-import friendsReducer from './friendsReducer';
-import messagesReducer from './messagesReducer';
-
-
-
-
-
-
 let store = {
     _state: {
         profilePage: {
@@ -81,38 +72,8 @@ let store = {
         this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
         this._state.friendsPage = friendsReducer(this._state.friendsPage, action);
 
-           this._reRender(this._state);
+        this._reRender(this._state);
     }
 
 }
 
-
-export const sendMessageActionMessage = () => {
-    return {
-        type: 'SEND-MESSAGE'
-    }
-}
-
-export const updateTextActionMessage = (newtext) => {
-    return {
-        type: 'UPDATE-MESSAGE', updateMessage: newtext
-    }
-}
-
-export const addPostActionCreator = () => {
-    return {
-        type: "ADD-POST"
-    }
-}
-
-export const updateTextActionCreator = (newtext) => {
-    return {
-        type: 'UPDATE-TEXT', updateText: newtext
-    }
-}
-
-
-
-
-
-export default store;
