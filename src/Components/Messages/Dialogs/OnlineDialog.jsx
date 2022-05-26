@@ -6,7 +6,7 @@ import OnlineDialogInfoContainer from './OnlineDialogInfo/OnlineDialogInfoContai
 const OnlineDialog = (props) => {
     return (
         <div className='dialog__online'>
-           <OnlineDialogInfoContainer store={props.store}/>
+           <OnlineDialogInfoContainer />
         </div>
     );
 }

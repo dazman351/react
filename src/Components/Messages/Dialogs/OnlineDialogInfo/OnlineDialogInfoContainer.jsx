@@ -1,28 +1,36 @@
 import './../../../../App.scss';
 import OnlineDialogInfo from './OnlineDialogInfo';
 import { sendMessageActionMessage, updateTextActionMessage } from './../../../../redux/messagesReducer';
+import storeContext from './../../../../storeContext';
 
 
 
 
-const OnlineDialogInfoContainer = (props) => {
+const OnlineDialogInfoContainer = () => {
 
-    let state = props.store.getState();
+    return (
+        <storeContext.Consumer> 
+            {
+                (store) => {
 
-    let sendMessage = () => {
-        props.store.dispatch(sendMessageActionMessage());
-    }
-
-    let changeMessage = (newtext) => {
-        let action = updateTextActionMessage(newtext);
-        props.store.dispatch(action);
-    }
-
-
-    return <OnlineDialogInfo    sendMessage={ sendMessage } 
-                                changeMessage={ changeMessage } 
-                                newMessageText={state.messagesPage.newMessageText}
-                                messagesData={state.messagesPage.messagesData}/>
+                    let state = store.getState();
+    
+                    let sendMessage = () => {
+                        store.dispatch(sendMessageActionMessage());
+                    }
+                
+                    let changeMessage = (newtext) => {
+                        let action = updateTextActionMessage(newtext);
+                        store.dispatch(action);
+                    }
+                    return  <OnlineDialogInfo   sendMessage={ sendMessage } 
+                                                changeMessage={ changeMessage } 
+                                                newMessageText={state.messagesPage.newMessageText}
+                                                messagesData={state.messagesPage.messagesData}/>
+                    } 
+            }
+        </storeContext.Consumer>
+    );
 
 }
 

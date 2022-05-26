@@ -10,7 +10,7 @@ const Profile = (props) => {
     return (
         <div className='profile__info'>
             <ProfileInfo />
-            <PostsContainer store={props.store} />
+            <PostsContainer />
         </div>
     );
 }
