@@ -69,8 +69,8 @@ let store = {
     dispatch(action) {
 
         this._state.profilePage = profileReducer(this._state.profilePage, action);
-        this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
-        this._state.friendsPage = friendsReducer(this._state.friendsPage, action);
+        this._state.messagesPage = messagesReducer(this._state.messagesPage);
+        this._state.friendsPage = friendsReducer(this._state.friendsPage);
 
         this._reRender(this._state);
     }

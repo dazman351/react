@@ -18,16 +18,10 @@ const App = (props) => {
 						<div className='social__inner'>
 							<Header />
 							<Routes>
-								<Route path='/' element={<Profile
-													postData={props.state.profilePage.postData}
-													dispatch={props.dispatch} 
-													newPostData={props.state.profilePage.newPostData} />} />
+								<Route path='/' element={<Profile store={props.store} />} />
 								<Route exact path='/dialogs' element={<Messages 
 													dialogsData={props.state.messagesPage.dialogsData} />} />
-								<Route path='/dialogs/:id' element={<OnlineDialog 
-													dispatch={props.dispatch}
-													messagesData={props.state.messagesPage.messagesData}
-													newMessageText={props.state.messagesPage.newMessageText}/>} />
+								<Route path='/dialogs/:id' element={<OnlineDialog store={props.store}/>} />
 								<Route path="/friends" element={<Friends 
 													friendsData={props.state.friendsPage.friendsData} />} />
 								<Route path='#' element={<Error />} />

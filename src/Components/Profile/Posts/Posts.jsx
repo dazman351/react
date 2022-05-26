@@ -1,6 +1,6 @@
 import './../../../App.scss';
 import Post from './Post/Post';
-import { addPostActionCreator, updateTextActionCreator } from './../../../redux/profileReducer';
+
 
 
 
@@ -8,13 +8,12 @@ import { addPostActionCreator, updateTextActionCreator } from './../../../redux/
 const Posts = (props) => {
 
     let addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.addPost();
     }
 
     let onPostChange = (e) => {
         let newtext = e.target.value;
-        let action = updateTextActionCreator(newtext);
-        props.dispatch(action);
+        props.updateText(newtext);
         
     }
 
@@ -24,12 +23,12 @@ const Posts = (props) => {
         <div className='profile__input'>
             Напишите ваше первое сообщение: <input
                                     placeholder='Введите текст'
-                                    onChange={onPostChange} 
+                                    onChange={ onPostChange } 
                                     value={ props.newPostData } />
             <button onClick={ addPost }>Send</button>
             <div className='profile__posts'>
                 { postMap }
-            </div><br />
+            </div>
         </div>
     );
 }

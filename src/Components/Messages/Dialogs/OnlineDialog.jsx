@@ -1,14 +1,12 @@
 import './../../../App.scss';
-import OnlineDialogInfo from './OnlineDialogInfo/OnlineDialogInfo';
+import OnlineDialogInfoContainer from './OnlineDialogInfo/OnlineDialogInfoContainer';
 
 
 
 const OnlineDialog = (props) => {
     return (
         <div className='dialog__online'>
-           <OnlineDialogInfo newMessageText={props.newMessageText}
-                             messagesData={props.messagesData} 
-                             dispatch={props.dispatch}/>
+           <OnlineDialogInfoContainer store={props.store}/>
         </div>
     );
 }

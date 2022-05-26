@@ -1,10 +1,5 @@
-import { updateTextActionMessage, sendMessageActionMessage } from '../../../../redux/messagesReducer';
 import './../../../../App.scss';
 import MessageWindow from './MessageWindow/MessageWindow';
-
-
-
-
 
 
 const OnlineDialogInfo = (props) => {
@@ -13,13 +8,12 @@ const OnlineDialogInfo = (props) => {
 
 
     let onSendMessage = () => {
-        props.dispatch(sendMessageActionMessage());
+        props.sendMessage();
     }
 
     let onChangeNewMessageText = (e) => {
         let newtext = e.target.value;
-        let action = updateTextActionMessage(newtext);
-        props.dispatch(action);
+        props.changeMessage(newtext);
     }
 
 
