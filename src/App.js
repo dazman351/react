@@ -1,11 +1,11 @@
 import './App.scss';
 import Header from './Components/Header/Header';
 import Profile from './Components/Profile/Profile';
-import Messages from './Components/Messages/Messages';
 import Error from './Components/Error/Error';
-import Friends from './Components/Friends/Friends';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import OnlineDialog from './Components/Messages/Dialogs/OnlineDialog';
+import MessagesContainer from './Components/Messages/MessagesContainer';
+import FriendsContainer from './Components/Friends/FriendsContainer';
 
 
 
@@ -19,12 +19,10 @@ const App = (props) => {
 							<Header />
 							<Routes>
 								<Route path='/' element={<Profile/>} />
-								{/* <Route exact path='/dialogs' element={<Messages 
-													dialogsData={props.state.messagesPage.dialogsData} />} /> */}
+								<Route exact path='/dialogs' element={<MessagesContainer />} />
 								<Route path='/dialogs/:id' element={<OnlineDialog />} />
-								{/* <Route path="/friends" element={<Friends 
-													friendsData={props.state.friendsPage.friendsData} />} />
-								<Route path='#' element={<Error />} /> */}
+								<Route path="/friends" element={<FriendsContainer />} />
+								<Route path='#' element={<Error />} />
 							</Routes>
 						</div>
 					</div>
