@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import OnlineDialog from './Components/Messages/Dialogs/OnlineDialog';
 import MessagesContainer from './Components/Messages/MessagesContainer';
 import FriendsContainer from './Components/Friends/FriendsContainer';
+import AllUsersContainer from './Components/Allusers/AllUsersContainer';
 
 
 
@@ -22,6 +23,7 @@ const App = (props) => {
 								<Route exact path='/dialogs' element={<MessagesContainer />} />
 								<Route path='/dialogs/:id' element={<OnlineDialog />} />
 								<Route path="/friends" element={<FriendsContainer />} />
+								<Route path="/allusers" element={<AllUsersContainer />} />
 								<Route path='#' element={<Error />} />
 							</Routes>
 						</div>

@@ -10,6 +10,7 @@ const Nav = () => {
                 <Link to='/dialogs' className='nav__link'>Messages</Link>
                 <Link to='/friends' className='nav__link'>Friends</Link>
                 <Link to='#' className='nav__link'>Settings</Link>
+                <Link to='/allusers' className='nav__link'>All users</Link>
             </div>
             <div className='nav__enter'>
                 <Link to='#' className='nav__link'>Sign In</Link>
