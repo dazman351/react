@@ -29,10 +29,12 @@ let initialState = {
 const messagesReducer = (state = initialState, action) => {
 
     switch(action.type) {
-        case "UPDATE-MESSAGE":
-            state.newMessageText = action.updateMessage;
-            return state;
-        case "SEND-MESSAGE":
+        case "UPDATE-MESSAGE": {
+            let copystate = {...state};
+            copystate.newMessageText = action.updateMessage;
+            return copystate;
+        }
+        case "SEND-MESSAGE": {
             if (state.newMessageText.trim('').length === 0) {
                 return alert('Сообщение пустое или его начало с пробела');
             }
@@ -41,9 +43,12 @@ const messagesReducer = (state = initialState, action) => {
                 id: 9, 
                 message: text
             }
-            state.messagesData.push(newMessage);
-            state.newMessageText = "";
-            return state;
+            let copystate = {...state};
+            copystate.messagesData = [...state.messagesData];
+            copystate.messagesData.push(newMessage);
+            copystate.newMessageText = "";
+            return copystate;
+        }
 
         default:
             return state;

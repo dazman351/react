@@ -8,26 +8,17 @@ import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let reRender = (state) => {
-	root.render(
-		<React.StrictMode>
-			<Provider store={store}>
-				<App />
-			</Provider>
-		</React.StrictMode>
-	);
-}
 
-reRender(store.getState());
+root.render(
+	<React.StrictMode>
+		<Provider store={store}>
+			<App />
+		</Provider>
+	</React.StrictMode>
+);
 
 
 
-
-store.subscribe(() => {
-	let state = store.getState();
-	reRender(state);
-});
- 
 
 
 reportWebVitals();
