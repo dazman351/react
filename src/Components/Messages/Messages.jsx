@@ -10,7 +10,7 @@ const Messages = (props) => {
 
     let dialogsMap = props.dialogsData.map(
 
-    dialog => <Dialog id={dialog.id} name={dialog.name} surname={dialog.surname} />
+    dialog => <Dialog id={dialog.id} key={dialog.id} name={dialog.name} surname={dialog.surname} />
     
     );
 

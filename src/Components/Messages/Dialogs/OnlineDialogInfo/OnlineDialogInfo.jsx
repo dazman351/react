@@ -4,7 +4,7 @@ import MessageWindow from './MessageWindow/MessageWindow';
 
 const OnlineDialogInfo = (props) => {
 
-    let messagesData = props.messagesData.map( message => <MessageWindow message={message.message} />)
+    let messagesData = props.messagesData.map( message => <MessageWindow key={message.id} message={message.message} />)
 
 
     let onSendMessage = () => {

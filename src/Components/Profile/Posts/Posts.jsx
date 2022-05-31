@@ -15,7 +15,7 @@ const Posts = (props) => {
         
     }
 
-    let postMap = props.postData.map(post => <Post text={post.text} likes={post.likes}/>)
+    let postMap = props.postData.map(post => <Post text={post.text} key={post.id} likes={post.likes}/>)
 
     return (
         <div className='profile__input'>

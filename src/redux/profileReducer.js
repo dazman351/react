@@ -15,26 +15,22 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
 
     switch(action.type) {
-        case 'ADD-POST': {
+        case 'ADD-POST': 
             if (state.newPostData.trim('').length === 0) {
                 return alert('Сообщение пустое или его начало с пробела');
             }
-            let newPost = {
-                id: 6,
-                text: state.newPostData,
-                likes: 0
-            }
-            let copystate = {...state};
-            copystate.postData = [...state.postData]
-            copystate.postData.push(newPost);
-            copystate.newPostData = "";
-            return copystate;
-        }
-        case 'UPDATE-TEXT': {
-            let copystate = {...state};
-            copystate.newPostData = action.updateText;
-            return copystate;
-        }
+            let text = state.newPostData;
+            return {
+                ...state,
+                newPostData: "",
+                postData: [...state.postData, {id: 6, text: text, likes: 0}]
+            };
+
+        case 'UPDATE-TEXT': 
+            return {
+                ...state,
+                newPostData: action.updateText
+            };
         default:
             return state;
     }   
